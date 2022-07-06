@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'ALS Kraft';
+    src: url('../fonts/ALSKraft.woff2') format('woff2'),
+        url('../fonts/ALSKraft.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

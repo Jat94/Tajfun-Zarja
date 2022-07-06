@@ -54,6 +54,7 @@ function images() {
     .pipe(dest('app/img/dest/'));
 }
 
+
 function cleanimg() {
     return del('app/img/dest/**/*', {force: true});
 }
@@ -67,6 +68,7 @@ function buildcopy() {
         'app/css/**/*.min.css',
         'app/js/**/*.min.js',
         'app/img/dest/**/*',
+        'app/fonts/**/*',
         'app/*.html'
     ], {base: 'app'})
     .pipe(dest('build'));
@@ -86,8 +88,8 @@ function startwatch() {
     watch(['app/**/*.scss'], styles);
     watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
     watch(['app/html/**/*.html', '!app/*.html'], includes);
+    watch(['app/img/src/**/*'], images);
     watch('app/**/*.html').on('change', browserSync.reload);
-    watch(['app/images/src/**/*'], images);
 }
 
 

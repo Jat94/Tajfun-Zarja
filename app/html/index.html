@@ -1,16 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css">
-    <script src="js/custom.min.js"></script>
-    <title>Document</title>
+    @@include('components/meta.html')
+    <title>Index page</title>
 </head>
-<body>
-    Hello МИР!
-    @@include_once('components/vies.html')
-    <!--img src="img/dest/pic1m.jpg" alt=""-->
+<body class="s-bg-style1"> 
+    @@include('components/header.html')
+    <section class="s-content">
+        <div class="s-container">
+            <div class="s-main-page">
+                <div class="s-main-page-about">
+                    <div class="s-main-page-title">ООО НПФ «Тайфун-Заря»</div>
+                    <div class="s-main-page-subtitle">Лидирующие позиции в области технологического внедрения, поставок и обслуживания оборудования, инструмента и оснастки для промышленных предприятий.</div>
+                </div>
+                <ul class="s-main-page-fastnav">
+                    <li class="s-main-page-fastnav-element">
+                        <a href="" class="s-main-page-fastnav-link">
+                            <figure class="s-main-page-fastnav-link-figure">
+                                <img src="img/dest/fastnav1.svg" alt="">
+                            </figure>
+                            <span class="s-main-page-fastnav-link-title">
+                                Восстановление инструмента
+                            </span>
+                        </a>
+                    </li>
+                    <li class="s-main-page-fastnav-element">
+                        <a href="" class="s-main-page-fastnav-link">
+                            <figure class="s-main-page-fastnav-link-figure">
+                                <img src="img/dest/fastnav2.svg" alt="">
+                            </figure>
+                            <span class="s-main-page-fastnav-link-title">
+                                Изготовление по чертежам заказчика
+                            </span>
+                        </a>
+                    </li>
+                    <li class="s-main-page-fastnav-element">
+                        <a href="" class="s-main-page-fastnav-link">
+                            <figure class="s-main-page-fastnav-link-figure">
+                                <img src="img/dest/fastnav3.svg" alt="">
+                            </figure>
+                            <span class="s-main-page-fastnav-link-title">
+                                Токарная обработка
+                            </span>
+                        </a>
+                    </li>
+                    <li class="s-main-page-fastnav-element">
+                        <a href="" class="s-main-page-fastnav-link">
+                            <figure class="s-main-page-fastnav-link-figure">
+                                <img src="img/dest/fastnav4.svg" alt="">
+                            </figure>
+                            <span class="s-main-page-fastnav-link-title">
+                                Фрезерная обработка
+                            </span>
+                        </a>
+                    </li>
+                    <li class="s-main-page-fastnav-element">
+                        <a href="" class="s-main-page-fastnav-link">
+                            <figure class="s-main-page-fastnav-link-figure">
+                                <img src="img/dest/fastnav5.svg" alt="">
+                            </figure>
+                            <span class="s-main-page-fastnav-link-title">
+                                Производство ленточных пил
+                            </span>
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </section>
+    @@include('components/footer.html')
 </body>
 </html>
