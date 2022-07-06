@@ -15,8 +15,8 @@ function browsersync() {
     browserSync.init({
         server: {baseDir: 'app/'},
         notify: false
-    })
-};
+    });
+}
 
 function scripts() {
     return src([
@@ -26,8 +26,8 @@ function scripts() {
     .pipe(concat('custom.min.js'))
     .pipe(uglify())
     .pipe(dest('app/js/'))
-    .pipe(browserSync.stream())
-};
+    .pipe(browserSync.stream());
+}
 
 
 function styles() {
@@ -43,23 +43,23 @@ function styles() {
         }
       }))
     .pipe(dest('app/css/'))
-    .pipe(browserSync.stream())
-};
+    .pipe(browserSync.stream());
+}
 
 
 function images() {
     return src('app/img/src/**/*')
     .pipe(newer('app/img/dest/'))
     .pipe(imagemin())
-    .pipe(dest('app/img/dest/'))
+    .pipe(dest('app/img/dest/'));
 }
 
 function cleanimg() {
-    return del('app/img/dest/**/*', {force: true})
+    return del('app/img/dest/**/*', {force: true});
 }
 
 function cleanbuild() {
-    return del('build/**/*', {force: true})
+    return del('build/**/*', {force: true});
 }
 
 function buildcopy() {
@@ -69,7 +69,7 @@ function buildcopy() {
         'app/img/dest/**/*',
         'app/*.html'
     ], {base: 'app'})
-    .pipe(dest('build'))
+    .pipe(dest('build'));
 }
 
 
@@ -85,6 +85,7 @@ function includes() {
 function startwatch() {
     watch(['app/**/*.scss'], styles);
     watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
+    watch(['app/html/**/*.html', '!app/*.html'], includes);
     watch('app/**/*.html').on('change', browserSync.reload);
     watch(['app/images/src/**/*'], images);
 }
@@ -98,4 +99,4 @@ exports.cleanimg = cleanimg;
 exports.build = series(cleanbuild, styles, scripts, images, includes, buildcopy);
 
 
-exports.default = parallel(styles, scripts, images, includes, browsersync, startwatch)
+exports.default = parallel(styles, scripts, images, includes, browsersync, startwatch);
