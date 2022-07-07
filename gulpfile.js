@@ -21,6 +21,8 @@ function browsersync() {
 function scripts() {
     return src([
         'node_modules/jquery/dist/jquery.min.js',
+        'app/js/jquery.scrollbar.min.js',
+        'app/js/slick.js',
         'app/js/custom.js'
     ])
     .pipe(concat('custom.min.js'))
