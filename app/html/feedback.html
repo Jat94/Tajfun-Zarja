@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include('components/meta.html')
+    <title>Page feedback</title>
+</head>
+<body class="s-bg-style1"> 
+    @@include('components/header.html')
+    <section class="s-content">
+        <div class="s-container">
+            <div class="s-inner-row">
+                <div class="s-inner-top">
+                    <div class="s-inner-title">оставить заявку</div>
+                </div>
+                <div class="s-inner-content">
+                    <div class="s-inner-feedback-block">
+                        <div class="s-inner-feedback-block-form-col">
+                            <div class="s-inner-feedback-block-form-aligner">
+                                <form class="s-inner-feedback-form">
+                                    <div class="s-inner-feedback-form-row">
+                                        <div class="s-inner-feedback-form-col">
+                                            <div class="s-input s-required">
+                                                <input type="text" name="" placeholder=" ">
+                                                <span class="s-input-placeholder">Имя</span>
+                                            </div>
+                                        </div>
+                                        <div class="s-inner-feedback-form-col">
+                                            <div class="s-input">
+                                                <input type="text" name="" placeholder=" ">
+                                                <span class="s-input-placeholder">Компания</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="s-inner-feedback-form-row">
+                                        <div class="s-inner-feedback-form-col">
+                                            <div class="s-input s-required">
+                                                <input type="text" name=""  placeholder=" " class="s-error">
+                                                <span class="s-input-placeholder">Телефон</span>
+                                            </div>
+                                        </div>
+                                        <div class="s-inner-feedback-form-col">
+                                            <div class="s-input">
+                                                <input type="text" name=""  placeholder=" ">
+                                                <span class="s-input-placeholder">E-mail</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="s-input s-required">
+                                        <textarea name="" placeholder=" "  class="s-error"></textarea>
+                                        <span class="s-input-placeholder">Сообщение</span>
+                                    </div>
+                                    <div class="s-inner-feedback-form-submit-row">
+                                        <div class="s-inner-feedback-form-submit-capcha">
+                                            <img src="img/dest/capcha.jpg" alt="">
+                                        </div>
+                                        <div class="s-inner-feedback-form-submit">
+                                            <label class="s-checkbox">
+                                                <input type="checkbox" class="s-error">
+                                                <span class="s-checkbox-square"></span>
+                                                <span class="s-checkbox-text">Нажимая на кнопку «Связаться с нами», я даю свое согласие на обработку персональных данных</span>
+                                            </label>
+                                            <button type="submit" class="s-btn s-red">Связаться с нами</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="s-inner-feedback-block-info-col">
+                            <div class="s-typography">
+                                <h4>Уважаемые клиенты!</h4>
+                                <p>Если вас заинтересовала наша продукция или услуги - заполните прилагаемую форму и наши специалисты свяжутся с вами в самое ближайшее время.</p>
+                                <p>Будем рады взаимовыгодному сотрудничеству!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    @@include('components/footer.html')
+</body>
+</html>

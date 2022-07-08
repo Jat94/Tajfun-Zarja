@@ -42,6 +42,10 @@ function calcInnerContentHeight() {
         $('.s-inner-content').outerHeight(innerRowHeight- innerTopHeight);
     } else {
         $('.s-inner-content').removeAttr('style');
+        $('.s-inner-cat-content').removeAttr('style');
+        $('.s-inner-downloads-scroll').removeAttr('style');
     }
     $('.s-inner-scroll-conent').scrollbar();
+    $('.s-inner-cat-content').scrollbar();
+    $('.s-inner-downloads-scroll').scrollbar();
 }
