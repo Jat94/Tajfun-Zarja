@@ -16,7 +16,88 @@ $(document).ready(function(){
         $('.s-content').removeAttr('style');
         calcContentHeight();
         calcInnerContentHeight();
+        calcSlideTextSize();
     });
+
+    $('.s-inner-manufacturing-slider').on('init', function(event, slick){
+        calcSlideTextSize();
+    });
+    $('.s-inner-manufacturing-slider').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        slidesPerRow: 2,
+        arrows: true,
+        dots: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              slidesPerRow: 1,
+              variableWidth: true
+            }
+          }
+        ]
+      });
+
+
+
+      $('.s-inner-news-slider').slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              slidesPerRow: 1,
+              variableWidth: true
+            }
+          }
+        ]
+      });
+
+
+      $('.s-inner-partners-slider').slick({
+        infinite: true,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        slidesPerRow: 3,
+        arrows: true,
+        dots: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              slidesPerRow: 1,
+              variableWidth: true
+            }
+          }
+        ]
+      });
+      $('.s-inner-reviews-slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+                adaptiveHeight: true
+            }
+          }
+        ]
+      });
 
 
 
@@ -44,8 +125,24 @@ function calcInnerContentHeight() {
         $('.s-inner-content').removeAttr('style');
         $('.s-inner-cat-content').removeAttr('style');
         $('.s-inner-downloads-scroll').removeAttr('style');
+        $('.s-inner-reviews-text-scroll').removeAttr('style');
     }
     $('.s-inner-scroll-conent').scrollbar();
     $('.s-inner-cat-content').scrollbar();
     $('.s-inner-downloads-scroll').scrollbar();
+    $('.s-inner-reviews-text-scroll').scrollbar();
+}
+
+function calcSlideTextSize() {
+    if ($(window).width() > 768) {
+        $('.s-inner-manufacturing-text').each(function(){
+            const elH =  $(this).outerHeight();
+            const elW =  $(this).outerWidth(); 
+            $(this).outerHeight(elH);
+            $(this).outerWidth(elW);
+        });
+    } else {
+        $('.s-inner-manufacturing-text').removeAttr('style');
+    }
+    
 }
