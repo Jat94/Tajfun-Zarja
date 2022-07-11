@@ -64,25 +64,35 @@ $(document).ready(function(){
       });
 
 
-      $('.s-inner-partners-slider').slick({
-        infinite: true,
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        slidesPerRow: 3,
-        arrows: true,
-        dots: true,
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              slidesPerRow: 1,
-              variableWidth: true
+      initFilteringSlider();
+      $('.s-inner-filter .s-btn').on('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        $('.s-inner-filter .s-btn').removeClass('s-red');
+        $(this).addClass('s-red');
+        let filter =  $(this).data('filter'),
+            htmls = [];
+
+        $('.s-inner-partners-slider').slick('unslick');
+        $('.s-inner-partners-slider').empty();
+        $('.s-inner-partners-slider-list .s-inner-partners-slide').each(function(){
+            if (filter != 'all') {
+              if ($(this).hasClass(filter)) {
+                htmls.push($(this).clone(true, true));
+              }
+            } else {
+              htmls.push($(this).clone(true, true));
             }
-          }
-        ]
+        });
+        for (let i=0; i<=htmls.length; i++) {
+          $('.s-inner-partners-slider').append(htmls[i]);
+        }
+        initFilteringSlider();
       });
+      
+
+
+
       $('.s-inner-reviews-slider').slick({
         infinite: true,
         slidesToShow: 1,
@@ -143,6 +153,27 @@ function calcSlideTextSize() {
         });
     } else {
         $('.s-inner-manufacturing-text').removeAttr('style');
-    }
-    
+    }  
+}
+
+function initFilteringSlider() {
+  $('.s-inner-partners-slider').slick({
+    infinite: true,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    slidesPerRow: 3,
+    arrows: true,
+    dots: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          slidesPerRow: 1,
+          variableWidth: true
+        }
+      }
+    ]
+  });
 }

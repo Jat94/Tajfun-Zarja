@@ -38,8 +38,16 @@ z = значине из макета; // выводится в px
     --clamp12: clamp(8px, .625vw, 12px);
     --clamp13: clamp(9px, .677vw, 13px);
     --clamp14: clamp(10px, .7291vw, 14px);
+
+
     --clamp16: clamp(11px, .83vw, 16px);
     --clamp18: clamp(13px, .9375vw, 18px);
+
+    --clamp14-typo: clamp(12px, .7291vw, 14px);
+    --clamp16-typo: clamp(14px, .83vw, 16px);
+    --clamp18-typo: clamp(16px, .9375vw, 18px);
+
+
     --clamp20: clamp(14px, 1.04vw, 20px);
     --clamp22: clamp(15px, 1.14583vw, 22px);
     --clamp24: clamp(16px, 1.25vw, 24px);
@@ -95,6 +103,7 @@ body {
         box-sizing: border-box;
         -ms-overflow-style: none;
         scrollbar-width: none;
+        outline: none;
         ::-webkit-scrollbar { 
             display: none;
         }
@@ -865,7 +874,7 @@ body {
                                         justify-content: flex-start;
                                         align-items: flex-start;
                                         color: var(--sub-color);
-                                        font-size: var(--clamp16);
+                                        font-size: var(--clamp16-typo);
                                         line-height: var(--clamp20);
                                         @media (max-width: 760px) {
                                             line-height: 20px;
@@ -1081,7 +1090,8 @@ body {
                                 background-color: var(--hover-color);
                                 color: var(--main-color);
                                 min-height: var(--clamp64);
-                                font-size: var(--clamp18);
+                                font-size: var(--clamp18-typo);
+                                padding: 0 var(--clamp10);
                                 text-transform: uppercase;
                                 width: 100%;
                                 flex-grow: 0;
@@ -1097,6 +1107,9 @@ body {
                                 flex-grow: 1;
                                 .s-inner-cat-list {
                                     padding: var(--clamp40);
+                                    @media (max-width: 1500px) {
+                                        padding: var(--clamp24);
+                                    }
                                     @media (max-width: 768px) {
                                         padding: 24px 16px;
                                     }
@@ -1109,7 +1122,7 @@ body {
                                         }
                                         .s-inner-cat-list-link {
                                             text-decoration: none;
-                                            font-size: var(--clamp16);
+                                            font-size: var(--clamp16-typo);
                                             line-height: 1.5;
                                             color: var(--main-color);
                                             transition: var(--transition);
@@ -1126,6 +1139,11 @@ body {
                                     top: var(--clamp40);
                                     bottom: var(--clamp40);
                                     right: var(--clamp20);
+                                    @media (max-width: 1500px) {
+                                        top: var(--clamp24);
+                                        bottom: var(--clamp24);
+                                        right: var(--clamp16);
+                                    }
                                     height: auto;
                                 }
                             }
@@ -1172,7 +1190,7 @@ body {
                                         align-items: flex-start;
                                         color: var(--main-color);
                                         text-decoration: none;
-                                        font-size: var(--clamp16);
+                                        font-size: var(--clamp16-typo);
                                         line-height: var(--clamp24);
                                         flex-wrap: wrap;
                                         padding-left: var(--clamp36);
@@ -1213,6 +1231,7 @@ body {
                                             align-items: flex-start;
                                             margin-bottom: var(--clamp3);
                                             color: var(--form-color);
+                                            font-size: var(--clamp16);
                                             @media (max-width: 768px) {
                                                 margin-bottom: 3px;
                                             }
@@ -1417,7 +1436,7 @@ body {
                                                 }
                                             }
                                             .s-inner-news-preview {
-                                                height: clamp(134px, 13.95vw, 268px);
+                                                height: clamp(134px, 11vw, 268px);
                                                 display: block;
                                                 @media (max-width: 768px) {
                                                     height: auto;
@@ -1444,7 +1463,7 @@ body {
                                                 .s-inner-news-text {
                                                     text-align: center;
                                                     display: block;
-                                                    font-size: var(--clamp14);
+                                                    font-size: var(--clamp14-typo);
                                                     line-height: 1.7;
                                                     color: var(--form-color);
                                                     @media (max-width: 768px) {
@@ -1452,11 +1471,11 @@ body {
                                                         text-align: left;
                                                     }
                                                     .s-inner-news-title {
-                                                        font-size: var(--clamp16);
+                                                        font-size: var(--clamp16-typo);
                                                         color: var(--sub-color);
                                                         display: block;
                                                         line-height: 1.6;
-                                                        padding-bottom: var(clamp10);
+                                                        padding-bottom: var(--clamp10);
                                                         transition: var(--transition);
                                                         @media (max-width: 768px) {
                                                             font-size: 16px;
@@ -1479,6 +1498,9 @@ body {
                             }
                         }
                     }
+                }
+                .s-inner-partners-slider-list {
+                    display: none;
                 }
                 .s-inner-partners-slider  {
                     height: 100%;
@@ -1818,7 +1840,7 @@ body {
         .s-typography {
             color: var(--main-color);
             line-height: 1.5;
-            font-size: var(--clamp16);
+            font-size: var(--clamp16-typo);
             @media (max-width: 768px) {
                 font-size: 16px;
             }
@@ -1830,7 +1852,7 @@ body {
                 text-decoration: underline;
             }
             p {
-                font-size: var(--clamp16);
+                font-size: var(--clamp16-typo);
                 @media (max-width: 768px) {
                     font-size: 16px;
                 }
@@ -2041,7 +2063,7 @@ body {
                 figcaption {
                     display: block;
                     padding: clamp(6px, .41666vw, 8px) 0 0;
-                    font-size: var(--clamp18);
+                    font-size: var(--clamp18-typo);
                     text-transform: uppercase;
                     @media (max-width: 768px) {
                         padding: 10px 0 0;
